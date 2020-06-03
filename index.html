@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="myscript.js"></script>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <title>Exercício3</title>
+</head>
+<body onLoad="atualiza()">
+
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="GroupCreateUser">
+            <div class="close-btn" onclick="togglePopup();">&times;</div>
+            <div class="createTab">
+                <div class="linhaInputs">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="nome" id="name" placeholder="Digite aqui o Nome">
+                </div>
+                <div class="linhaInputs">
+                    <label for="idade">Idade:</label>
+                    <input type="text" class="idade" id="age" placeholder="Digite Aqui a idade">
+                </div>
+            </div>
+            <div class="btn" onclick="add();";>Adicionar Novo Usuário</div>
+        </div>
+    </div>
+    
+    <div class="Container">
+        <div class="containerTitulo">
+            <div class="titulo">Exercício 3 by Victor</div> 
+        </div>
+        <div class="flip-card">
+            <div class="card">
+                <figure class="card-front">
+                    <img src="imagem.png" alt="Minha ibagem linda" class="ibagem">
+                </figure>
+                <figure class="card-back" onclick="togglePopup();">
+                    <img src="imagem_back.png" alt="Minha ibagem linda_2" class="ibagem">
+                </figure>
+            </div>
+        </div>
+        <div class="ListaDeUsuarios">
+        </div>
+    </div> 
+</body>
+</html>
+
+

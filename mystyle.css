@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media (max-width: 350px) {
+    .botoes{
+        flex-direction: column;
+        justify-content:center;
+    }
+}
+
+.btn{
+    font-size:15px;
+    width: 100%;
+    background-color: #3f3d45;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    font-family:fantasy;
+    border-radius: 0 0 10px 10px;
+    min-width: 292;
+}
+
+.btn:hover{
+    background-color:rgb(185, 185, 224);
+    cursor: pointer;
+    color: #3f3d45;
+    cursor: pointer;
+}
+
+.BtnEdit, .BtnDel{
+    margin: 5px;
+    width: 13em;
+    border-style: solid;
+    border-width: 1px;
+}
+
+@media (max-width: 738px) {
+    .BtnEdit, .BtnDel{
+        width: 6em;
+    }
+    .currentCell{
+        width: calc(100%);
+    }
+}
+
+.BtnDel{
+    background-color: rgb(255, 153, 153);
+    border-color: rgb(255, 95, 95);
+}
+
+.BtnEdit{
+    background-color: rgb(134, 225, 255);
+    border-color:  rgb(20, 196, 255);
+}
+
+@media (min-width: 850){
+    .BtnEdit{
+        margin-right: 20px; 
+    }
+    .BtnDel{
+        margin-left: 20px;
+    }
+}
+
+.BtnDel:hover{
+    background-color: rgb(255, 95, 95);
+    cursor: pointer;
+}
+
+.BtnEdit:hover{
+    background-color: rgb(20, 196, 255);
+    cursor: pointer;
+}
+
+.card{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+
+}
+
+.card,.card-front,.card-back,.ibagem{
+
+    width: 100%;
+    height: 100%;
+    max-width: 480px;
+
+}
+
+.card-front, 
+.card-back {
+  backface-visibility: hidden;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-back{
+    transform: rotateY(180deg);
+}
+
+.Container{
+    display: grid;
+    grid-template-columns: 25vw 50vw 25vw;
+    grid-template-rows: 2vh 21vh 30.3vh 32.4vh 25vh;
+}
+
+.containerCaixasDeTexto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 610px) {
+    .containerCaixasDeTexto{
+      flex-direction: column;  
+    }
+}
+
+.containerTitulo{
+    display: flex;
+    justify-content: center;
+    max-height: 16px;
+    min-height: 16px;
+    grid-row-start:1;
+    grid-column-start:2;
+}
+
+.createTab{
+    background-color: rgb(219, 234, 240);;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    min-width: 292;
+}
+
+.currentCell{
+    background-color: rgb(219, 234, 240);
+    width: calc(100% - 0.4px -10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: rgb(151, 146, 146);
+    border-width: 0.2px;
+}
+
+@media (min-width: 739px) {
+    .currentCell {
+      width: calc(100% - 3.3px)
+    }
+  }
+
+  .flip-card{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    object-fit:cover;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.flip-card:hover .card{
+    transform: rotateY(180deg);
+}
+
+.GroupCreateUser{
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%) scale(0);
+    background #fff;
+    width:500px;
+    height:250px;
+    z-index: 2;
+}
+
+.GroupCreateUser .close-btn {
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:10px;
+    width:20px;
+    height:20px;
+    background:#3f3d45;
+    color:#fff;
+    font-size:20px;
+    font-weight:600;
+    line-height:20px;
+    text-align:center;
+    border-radius:50%;
+  }
+
+  .GroupCreateUser .close-btn:hover {
+    background:#dd0606;
+  }
+  
+
+/*.ibagem{
+    max-width: 100%;
+    max-height: 100%;
+}*/
+
+input{
+    font-family:fantasy; 
+}
+.linhaInputs, .linhaInputsNome, LinhaInputsIdade{
+
+    margin: 10px;
+    display:flex;
+    align-items: flex-start;
+    flex-direction: column; 
+}
+
+.popup .overlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    z-index:1;
+    display:none;
+  }
+
+  .popup.active .overlay {
+    display:block;
+  }
+
+  .popup.active .GroupCreateUser {
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+  }
+
+.popup{
+
+}
+
+@keyframes animacaoTitulo{
+    0%{
+        color: rgb(255, 95, 95);
+        text-align: center;
+        font-size: 16px;
+        font-style:bold;
+    }
+
+    25%{
+        color: rgb(20, 114, 255);
+        transform: translateX(-200px) rotateY(360deg);
+        text-align: center;
+        font-size: 12px;
+    }
+
+    50%{
+        color: rgb(255, 95, 95);
+        text-align: center;
+        font-size: 16px;
+    }
+
+    75%{
+        color: rgb(20, 114, 255);
+        transform: translateX(200px) rotateY(-360deg);
+        text-align: center;
+        font-size: 12px;
+    }
+
+    100%{
+        color: rgb(255, 95, 95);
+        text-align: center;
+        font-size: 16px;
+    }
+}
+    
+
+.titulo{
+    animation-name: animacaoTitulo;
+    animation-duration:  7s ;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    transition: ease-in;
+    
+}
+
+label{
+    width: 130px;
+}
+
+.ListaDeUsuarios{
+    grid-column-start: 2;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
